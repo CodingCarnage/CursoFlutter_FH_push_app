@@ -24,7 +24,6 @@ class PushNotificationProvider {
 
     print('===== FCM Token =====');
     print(token);
-    //* ccGgbuLATo-FStmMxt1Vj6:APA91bF6GgNJdCsXrcnSjWvq9RcE3T5f_kpoSwW8KNkN6oCLzSMRxYVXbRLNYc_lYyWr2RjuHetptgGNIXKhg8Oh-BE7Y1uKijpc2RARmrIutn14V0VkPKLDMx-QCrhX20cjfX3SMh-K
 
     _firebaseMessaging.configure(
       onMessage: onMessage,
@@ -37,15 +36,25 @@ class PushNotificationProvider {
   Future<dynamic> onMessage(Map<String, dynamic> message) async {
     print('===== onMessage =====');
     print('message: $message');
+    final argument = message['data']['food'];
+    print('argument: $argument');
+    
   }
   
   Future<dynamic> onLaunch(Map<String, dynamic> message) async {
     print('===== onLaunch =====');
     print('message: $message');
+
+    final argument = message['data']['food'];
+    print('argument: $argument');
   }
   
   Future<dynamic> onResume(Map<String, dynamic> message) async {
     print('===== onResume =====');
     print('message: $message');
+
+    final argument = message['data']['food'];
+    print('===== arguments =====');
+    print('argument: $argument');
   }
 }
